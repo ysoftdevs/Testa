@@ -5,8 +5,8 @@
 
 ApplicationController::ApplicationController(WebEngineView* webEngineView, QObject *parent) :
     QObject(parent),
-    webEngineView(webEngineView),
-    webSocket(new QWebSocket())
+    webSocket(new QWebSocket()),
+    webEngineView(webEngineView)
 {
     connect(webSocket, &QWebSocket::connected, this, &ApplicationController::connected);
     connect(webSocket, &QWebSocket::textMessageReceived, this, &ApplicationController::messageReceived);
@@ -45,6 +45,7 @@ void ApplicationController::messageReceived(const QString &message)
 }
 void ApplicationController::error(QAbstractSocket::SocketError error)
 {
+    Q_UNUSED(error);
     qDebug() << webSocket->errorString();
 }
 

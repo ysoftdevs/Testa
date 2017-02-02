@@ -8,7 +8,7 @@ QT       += core gui webenginewidgets websockets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = desktop-shell
+TARGET = testa
 TEMPLATE = app
 
 LIBS += -framework CoreData -framework Foundation -framework AppKit
