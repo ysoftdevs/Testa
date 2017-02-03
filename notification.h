@@ -1,12 +1,14 @@
 #ifndef NOTIFICATION_H
 #define NOTIFICATION_H
 
+#include <QObject>
 #include <string>
 
-class Notification
+class Notification : public QObject
 {
-public:
-    static void show(const std::string& title, const std::string& message);
+    Q_OBJECT
+public slots:
+    static void show(const QString &title, const QString &message);
     static void hide();
 private:
     Notification() { }

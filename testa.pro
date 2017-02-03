@@ -29,7 +29,8 @@ SOURCES += main.cpp \
            mainwindow.cpp \
            webengineview.cpp \
            notification.cpp \
-    applicationcontroller.cpp
+    applicationcontroller.cpp \
+    actionreceiver.cpp
 
 macx {
     OBJECTIVE_SOURCES += nativeprogressbar_mac.mm \
@@ -40,4 +41,5 @@ HEADERS  += mainwindow.h \
             webengineview.h \
             progressbar.h \
             notification.h \
-    applicationcontroller.h
+    applicationcontroller.h \
+    actionreceiver.h

@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     WebEngineView view;   
-
-    ApplicationController applicationController(&view);
+    ActionReceiver actionReceiver(QUrl("ws://localhost:12345"));
+    ApplicationController applicationController(&view, &actionReceiver);
 
     return a.exec();
 }

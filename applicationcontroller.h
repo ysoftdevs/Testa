@@ -2,27 +2,19 @@
 #define APPLICATIONCONTROLLER_H
 
 #include <QObject>
-#include <QJsonObject>
-#include <QAbstractSocket>
-#include <QtWebSockets/QWebSocket>
+
 #include "webengineview.h"
+#include "actionreceiver.h"
 
 class ApplicationController : public QObject
 {
     Q_OBJECT
 public:
-    explicit ApplicationController(WebEngineView *webEngineView, QObject *parent = 0);
+    explicit ApplicationController(WebEngineView *webEngineView, ActionReceiver *actionReceiver, QObject *parent = 0);
     void test();
-private slots:
-    void connected();
-    void messageReceived(const QString &message);
-    void error(QAbstractSocket::SocketError error);
-private:
-    QWebSocket* webSocket;
+private:    
     WebEngineView* webEngineView;
-
-    QString getMessageType(const QJsonObject &jsonObject);
-    QJsonObject getParameters(const QJsonObject &jsonObject);
+    ActionReceiver* actionReceiver;
 };
 
 #endif // APPLICATIONCONTROLLER_H
