@@ -1,6 +1,5 @@
 #include <QApplication>
 
-#include "mainwindow.h"
 #include "webengineview.h"
 #include "applicationcontroller.h"
 
